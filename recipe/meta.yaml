@@ -1,0 +1,21 @@
+{% set year = "2019" %}
+{% set cycle = "3" %}
+{% set version = "1rc1" %}
+
+package:
+  name: collection
+  version: {{ year }}C{{ cycle }}.{{ version }}
+
+build:
+  number: 0
+
+requirements:
+  run:
+    - analysis >=2019C3.1rc1
+    - caproto >=0.4.0
+    - python-confluent-kafka
+    - nslsii >=0.0.10
+    - pyepics >=3.3.0
+    - pykafka
+    - pyolog >=4.4.0
+    - pyserial
