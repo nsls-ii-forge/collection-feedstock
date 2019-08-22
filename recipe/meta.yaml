@@ -26,7 +26,7 @@ about:
   home: https://nsls-ii.github.io/deployment_docs.html
   license: BSD 3-Clause
   license_file: LICENSE
-  summary: Analysis metapackage for NSLS-II deployments
+  summary: Collection metapackage for NSLS-II deployments
   description: |
-    Analysis metapackage for NSLS-II deployments. See the deployment
+    Collection metapackage for NSLS-II deployments. See the deployment
     documentation at https://nsls-ii.github.io/deployment_docs.html
