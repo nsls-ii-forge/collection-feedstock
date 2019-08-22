@@ -8,8 +8,8 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  noarch: python
-  number: 0
+  skip: True  # [py<36]
+  number: 1
 
 requirements:
   run:
@@ -20,7 +20,7 @@ requirements:
     - pykafka
     - pyolog >=4.4.0
     - pyserial
-    - python-confluent-kafka
+    - python-confluent-kafka  # [not win]
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
