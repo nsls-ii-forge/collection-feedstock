@@ -10,8 +10,12 @@ jobs:
   strategy:
     maxParallel: 8
     matrix:
-      osx_:
-        CONFIG: osx_
+      osx_python3.6:
+        CONFIG: osx_python3.6
+        UPLOAD_PACKAGES: True
+        UPLOAD_ON_BRANCH: master
+      osx_python3.7:
+        CONFIG: osx_python3.7
         UPLOAD_PACKAGES: True
         UPLOAD_ON_BRANCH: master
 
