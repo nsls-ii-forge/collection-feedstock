@@ -1,21 +1,32 @@
+{% set name = "collection" %}
 {% set year = "2019" %}
 {% set cycle = "3" %}
-{% set version = "1rc1" %}
+{% set version = "0" %}
 
 package:
-  name: collection
+  name: {{ name }}
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
+  noarch: python
   number: 0
 
 requirements:
   run:
-    - analysis >=2019C3.1rc1
+    - analysis >=2019C3.0
     - caproto >=0.4.0
-    - python-confluent-kafka
     - nslsii >=0.0.10
     - pyepics >=3.3.0
     - pykafka
     - pyolog >=4.4.0
     - pyserial
+    - python-confluent-kafka
+
+about:
+  home: https://nsls-ii.github.io/deployment_docs.html
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: Analysis metapackage for NSLS-II deployments
+  description: |
+    Analysis metapackage for NSLS-II deployments. See the deployment
+    documentation at https://nsls-ii.github.io/deployment_docs.html
