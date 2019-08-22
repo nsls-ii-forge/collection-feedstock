@@ -1,0 +1,6 @@
+channel_sources:
+- nsls2forge,defaults
+channel_targets:
+- nsls2forge main
+docker_image:
+- condaforge/linux-anvil-comp7
