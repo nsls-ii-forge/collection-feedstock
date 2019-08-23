@@ -25,6 +25,17 @@ requirements:
     - python
     - python-confluent-kafka  # [not win]
 
+test:
+  imports:
+    - bluesky
+    - ophyd
+    - databroker
+    - event_model
+    - caproto
+  commands:
+    - python -V
+    - ipython -V
+
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
   license: BSD 3-Clause
