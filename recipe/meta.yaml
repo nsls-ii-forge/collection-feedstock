@@ -19,7 +19,7 @@ requirements:
     - caproto >=0.4.0
     - nslsii >=0.0.10
     - pyepics >=3.3.0
-    # - pykafka
+    - pykafka
     - pyolog >=4.4.0
     - pyserial
     - python
