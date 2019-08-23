@@ -18,10 +18,10 @@ requirements:
     - analysis >=2019C3.0
     - caproto >=0.4.0
     - nslsii >=0.0.10
-    # - pyepics >=3.3.0
+    - pyepics >=3.3.0
     # - pykafka
-    # - pyolog >=4.4.0
-    # - pyserial
+    - pyolog >=4.4.0
+    - pyserial
     - python
     # - python-confluent-kafka  # [not win]
 
