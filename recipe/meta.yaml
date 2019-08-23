@@ -23,7 +23,7 @@ requirements:
     - pyolog >=4.4.0
     - pyserial
     - python
-    # - python-confluent-kafka  # [not win]
+    - python-confluent-kafka  # [not win]
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
