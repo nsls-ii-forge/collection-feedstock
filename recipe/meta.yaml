@@ -8,10 +8,12 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  noarch: python
-  number: 0
+  skip: True  # [py<36]
+  number: 1
 
 requirements:
+  host:
+    - python
   run:
     - analysis >=2019C3.0
     - caproto >=0.4.0
@@ -20,7 +22,19 @@ requirements:
     - pykafka
     - pyolog >=4.4.0
     - pyserial
-    - python-confluent-kafka
+    - python
+    - python-confluent-kafka  # [not win]
+
+test:
+  imports:
+    - bluesky
+    - ophyd
+    - databroker
+    - event_model
+    - caproto
+  commands:
+    - python -V
+    - ipython -V
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html

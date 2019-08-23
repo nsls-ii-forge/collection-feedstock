@@ -2,5 +2,3 @@ channel_sources:
   - nsls2forge,defaults
 channel_targets:
   - nsls2forge main
-python:
-  - '3.6'
