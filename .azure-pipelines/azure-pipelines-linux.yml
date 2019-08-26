@@ -13,12 +13,10 @@ jobs:
       linux_python3.6:
         CONFIG: linux_python3.6
         UPLOAD_PACKAGES: True
-        UPLOAD_ON_BRANCH: master
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_python3.7:
         CONFIG: linux_python3.7
         UPLOAD_PACKAGES: True
-        UPLOAD_ON_BRANCH: master
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
@@ -31,11 +29,8 @@ jobs:
 
   - script: |
         export CI=azure
-        if [ "$(Build.SourceBranch)" == "refs/heads/$UPLOAD_ON_BRANCH" -a $UPLOAD_PACKAGES == "True" ]; then
-            export UPLOAD_PACKAGES=True
-        else
-            export UPLOAD_PACKAGES=False
-        fi
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+        export UPLOAD_ON_BRANCH="master"
         .azure-pipelines/run_docker_build.sh
     displayName: Run docker build
     env:
