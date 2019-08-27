@@ -9,14 +9,14 @@ package:
 
 build:
   skip: True  # [py<36]
-  number: 2
+  number: 3
 
 requirements:
   host:
     - python
   run:
     - analysis >=2019C3.0
-    - caproto >=0.4.0
+    - caproto <0.4.0
     - nslsii >=0.0.10
     - pyepics <3.4.0
     - pykafka
@@ -28,10 +28,10 @@ requirements:
 test:
   imports:
     - bluesky
-    - ophyd
+    - caproto
     - databroker
     - event_model
-    - caproto
+    - ophyd
   commands:
     - python -V
     - ipython -V
