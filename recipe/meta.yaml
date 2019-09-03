@@ -18,7 +18,7 @@ requirements:
   run:
     - analysis >=2019C3.0.1
     - caproto <0.4.0
-    - nslsii >=0.0.10
+    - nslsii >=0.0.11
     - pyepics <3.4.0
     - pykafka
     - pyolog >=4.4.0
