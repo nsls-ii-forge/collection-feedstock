@@ -9,15 +9,15 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}{{ micro }}
 
 build:
-  skip: True  # [py<36]
+  skip: True  # [py<37 or not linux]
   number: 0
 
 requirements:
   host:
     - python
   run:
+    - nsls2-analysis ==2020C2.0=*_1
     - python
-    - analysis ==2020C2.0=*_3
     - ansiwrap
     - bluesky-darkframes
     - caproto
