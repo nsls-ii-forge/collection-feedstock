@@ -17,17 +17,88 @@ requirements:
     - python
   run:
     - python
-    - analysis >={{ year }}C{{ cycle }}.{{ version }}{{ micro }}
+    - analysis ==2020C2.0=*_3
     - ansiwrap
+    - bluesky-darkframes
     - caproto
     - inflection
-    - nslsii >=0.0.14
+    - nslsii >=0.0.15
     - pexpect
     - pyepics >=3.4.2
     - pykafka
     - pyolog >=4.4.0
     - pyserial
     - python-confluent-kafka  # [not win]
+    # Beamline-specific packages
+    - chxtools
+    # hklpy is not fully compatible with the rest of the packages.
+    # Need to rebuild it with proper dependencies. Meanwhile, the package from
+    # lightsource2-tag can be used instead.
+    # - hklpy
+    - hxnfly
+    - hxntools
+    - ppmac
+    # qastools are installed from source
+    # - qastools
+    - sixtools
+    # XPD packages are in conflict with the rest of the stack.
+    # Need to fix it on their side.
+    # - xpdacq
+    # - xpdan
+
+test:
+  requires:
+    - nsls2forge-utils
+  imports:
+    - area_detector_handlers
+    - bluesky
+    - caproto
+    - dask
+    - databroker
+    - event_model
+    - lmfit
+    - matplotlib
+    - numpy
+    - ophyd
+    - oscars
+    - peakutils
+    - pymongo
+    - pyxrf
+    - skbeam
+    - suitcase.csv
+    - suitcase.json_metadata
+    - suitcase.jsonl
+    - suitcase.mongo_embedded
+    - suitcase.mongo_normalized
+    - suitcase.msgpack
+    - suitcase.specfile
+    - suitcase.tiff_series
+    - suitcase.tiff_stack
+    - suitcase.utils
+    - xray_vision
+    # Beamline-specific packages
+    - chxtools
+    - csxtools
+    - edrixs
+    - eiger_io
+    - hxntools
+    - isstools
+    - py4xs
+    - sixtools
+  commands:
+    # Fail if the "conda-forge" channel is in the list of channels.
+    # TODO: make it working again in the cloud.
+    # - check-results -t channels -f conda-forge
+
+    # Fail if versions of the packages are not as expected minimum ones.
+    - check-results -t version -p bluesky     -e 1.6
+    - check-results -t version -p databroker  -e 1.0
+    - check-results -t version -p event_model -e 1.15
+    - check-results -t version -p ophyd       -e 1.4
+    - python -V
+    - ipython -V
+    - nexpy --help
+
 
 test:
   imports:
