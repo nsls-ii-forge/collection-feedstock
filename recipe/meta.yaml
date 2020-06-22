@@ -58,6 +58,7 @@ test:
     - event_model
     - lmfit
     - matplotlib
+    - nslsii
     - numpy
     - ophyd
     - oscars
@@ -98,22 +99,6 @@ test:
     - python -V
     - ipython -V
     - nexpy --help
-
-
-test:
-  imports:
-    - bluesky
-    - caproto
-    - databroker
-    - event_model
-    - nslsii
-    - ophyd
-  commands:
-    - python -V
-    - ipython -V
-    - python -c "from distutils.version import LooseVersion; import bluesky; assert LooseVersion(bluesky.__version__) >= '1.6'"
-    - python -c "from distutils.version import LooseVersion; import databroker; assert LooseVersion(databroker.__version__) >= '1.0'"
-    - python -c "from distutils.version import LooseVersion; import ophyd; assert LooseVersion(ophyd.__version__) >= '1.4'"
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
