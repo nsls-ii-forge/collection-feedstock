@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - nsls2forge main
 docker_image:
-- condaforge/linux-anvil-comp7
+- nsls2/nsls2forge:latest
 numpy:
 - '1.14'
 pin_run_as_build:
