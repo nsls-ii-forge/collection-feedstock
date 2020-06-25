@@ -10,7 +10,7 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -25,7 +25,6 @@ requirements:
     - nslsii >=0.0.15
     - pexpect
     - pyepics >=3.4.2
-    - pykafka
     - pyolog >=4.4.0
     - pyserial
     - python-confluent-kafka  # [not win]
