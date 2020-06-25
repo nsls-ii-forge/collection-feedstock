@@ -95,6 +95,7 @@ test:
     - python -V
     - ipython -V
     - nexpy --help
+    - conda-pack --help
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
