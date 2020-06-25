@@ -79,15 +79,14 @@ test:
     - csxtools
     - edrixs
     - eiger_io
+    - hkl
     - hxntools
     - isstools
     - py4xs
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    # TODO: make it working again in the cloud.
-    # - check-results -t channels -f conda-forge
-
+    - check-results -t channels -f conda-forge
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
     - check-results -t version -p databroker  -e 1.0
