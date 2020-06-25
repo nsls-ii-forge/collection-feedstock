@@ -31,7 +31,7 @@ requirements:
     - python-confluent-kafka  # [not win]
     # Beamline-specific packages
     - chxtools
-    - hklpy
+    - hklpy  # [linux]
     - hxnfly
     - hxntools
     - ppmac
@@ -79,7 +79,7 @@ test:
     - csxtools
     - edrixs
     - eiger_io
-    - hkl
+    - hkl  # [linux]
     - hxntools
     - isstools
     - py4xs
