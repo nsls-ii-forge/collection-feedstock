@@ -5,3 +5,7 @@ channel_targets:
 python:
   - 3.6
   - 3.7
+docker_image:
+  - nsls2/nsls2forge:latest
+cuda_compiler_version:
+  - None

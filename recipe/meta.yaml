@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_1
+    - nsls2-analysis ==2020C2.0=*_2
     - python
     - ansiwrap
     - bluesky-darkframes
@@ -31,10 +31,7 @@ requirements:
     - python-confluent-kafka  # [not win]
     # Beamline-specific packages
     - chxtools
-    # hklpy is not fully compatible with the rest of the packages.
-    # Need to rebuild it with proper dependencies. Meanwhile, the package from
-    # lightsource2-tag can be used instead.
-    # - hklpy
+    - hklpy  # [linux]
     - hxnfly
     - hxntools
     - ppmac
@@ -82,15 +79,14 @@ test:
     - csxtools
     - edrixs
     - eiger_io
+    - hkl  # [linux]
     - hxntools
     - isstools
     - py4xs
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    # TODO: make it working again in the cloud.
-    # - check-results -t channels -f conda-forge
-
+    - check-results -t channels -f conda-forge
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
     - check-results -t version -p databroker  -e 1.0
@@ -99,6 +95,7 @@ test:
     - python -V
     - ipython -V
     - nexpy --help
+    - conda-pack --help
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
