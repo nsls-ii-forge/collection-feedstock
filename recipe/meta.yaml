@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_1
+    - nsls2-analysis ==2020C2.0=*_2
     - python
     - ansiwrap
     - bluesky-darkframes
@@ -31,10 +31,7 @@ requirements:
     - python-confluent-kafka  # [not win]
     # Beamline-specific packages
     - chxtools
-    # hklpy is not fully compatible with the rest of the packages.
-    # Need to rebuild it with proper dependencies. Meanwhile, the package from
-    # lightsource2-tag can be used instead.
-    # - hklpy
+    - hklpy
     - hxnfly
     - hxntools
     - ppmac
