@@ -10,19 +10,19 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 2
+  number: 3
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_2
+    - nsls2-analysis ==2020C2.0=*_3
     - python
     - ansiwrap
     - bluesky-darkframes
     - caproto
     - inflection
-    - nslsii >=0.0.15
+    - nslsii >=0.0.16
     - pexpect
     - pyepics >=3.4.2
     - pyolog >=4.4.0
@@ -59,9 +59,11 @@ test:
     - ophyd
     - oscars
     - peakutils
+    - photutils
     - pymongo
     - pyxrf
     - skbeam
+    - srwlpy  # [linux]    
     - suitcase.csv
     - suitcase.json_metadata
     - suitcase.jsonl
