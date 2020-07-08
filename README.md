@@ -3,9 +3,9 @@ About collection
 
 Home: https://nsls-ii.github.io/deployment_docs.html
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Collection metapackage for NSLS-II deployments
 
