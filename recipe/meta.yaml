@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 3
+  number: 4
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_3
+    - nsls2-analysis ==2020C2.0=*_4
     - python
     - ansiwrap
     - bluesky-darkframes
@@ -100,7 +100,7 @@ test:
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
   summary: Collection metapackage for NSLS-II deployments
   description: |
