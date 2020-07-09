@@ -10,7 +10,7 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 4
+  number: 5
 
 requirements:
   host:
@@ -32,7 +32,7 @@ requirements:
     - chxtools
     - hklpy  # [linux]
     - hxnfly
-    - hxntools
+    - hxntools >=0.4.3
     - ppmac
     # qastools are installed from source
     # - qastools
