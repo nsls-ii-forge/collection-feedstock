@@ -16,7 +16,7 @@ requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_4
+    - nsls2-analysis ==2020C2.0=*_5
     - python
     - ansiwrap
     - bluesky-darkframes
