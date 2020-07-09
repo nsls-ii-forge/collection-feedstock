@@ -3,6 +3,7 @@
 {% set cycle = "2" %}
 {% set version = "0" %}
 {% set micro = "" %}
+{% set build_num = "5" %}
 
 package:
   name: {{ name|lower }}
@@ -10,13 +11,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 5
+  number: {{ build_num }}
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_5
+    - nsls2-analysis ==2020C2.0=*_{{ build_num }}
     - python
     - ansiwrap
     - bluesky-darkframes
