@@ -3,6 +3,7 @@
 {% set cycle = "2" %}
 {% set version = "0" %}
 {% set micro = "" %}
+{% set build_num = "5" %}
 
 package:
   name: {{ name|lower }}
@@ -10,18 +11,19 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 4
+  number: {{ build_num }}
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_4
+    - nsls2-analysis ==2020C2.0=*_{{ build_num }}
     - python
     - ansiwrap
     - bluesky-darkframes
     - caproto
     - inflection
+    - napari
     - nslsii >=0.0.16
     - pexpect
     - pyepics >=3.4.2
@@ -32,7 +34,7 @@ requirements:
     - chxtools
     - hklpy  # [linux]
     - hxnfly
-    - hxntools
+    - hxntools >=0.4.3
     - ppmac
     # qastools are installed from source
     # - qastools
