@@ -23,6 +23,7 @@ requirements:
     - bluesky-darkframes
     - caproto
     - inflection
+    - napari
     - nslsii >=0.0.16
     - pexpect
     - pyepics >=3.4.2
