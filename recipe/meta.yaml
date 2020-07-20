@@ -3,7 +3,7 @@
 {% set cycle = "2" %}
 {% set version = "0" %}
 {% set micro = "" %}
-{% set build_num = "5" %}
+{% set build_num = "6" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,6 @@ requirements:
     - bluesky-darkframes
     - caproto
     - inflection
-    - napari
     - nslsii >=0.0.16
     - pexpect
     - pyepics >=3.4.2
@@ -56,6 +55,7 @@ test:
     - event_model
     - lmfit
     - matplotlib
+    - napari
     - nslsii
     - numpy
     - ophyd
@@ -97,8 +97,10 @@ test:
     - check-results -t version -p ophyd       -e 1.4
     - python -V
     - ipython -V
-    - nexpy --help
     - conda-pack --help
+    - nexpy --help
+    - napari --help
+    - napari --version
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
