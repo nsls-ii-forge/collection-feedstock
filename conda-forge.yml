@@ -6,6 +6,7 @@ channels:
     - defaults
   targets:
     - [nsls2forge, main]
+channel_priority: flexible
 azure:
   user_or_org: nsls2forge
   project_name: nsls2forge
