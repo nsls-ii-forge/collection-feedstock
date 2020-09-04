@@ -20,6 +20,7 @@ requirements:
     - nsls2-analysis ==2020C2.0=*_{{ build_num }}
     - python
     - ansiwrap
+    - bloptools
     - bluesky-darkframes
     - caproto
     - inflection
