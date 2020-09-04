@@ -97,8 +97,9 @@ test:
     - check-results -t channels -f conda-forge  # [not osx]
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
-    - check-results -t version -p databroker  -e 1.2
+    - check-results -t version -p databroker  -e 1.1
     - check-results -t version -p event_model -e 1.16
+    - check-results -t version -p nslsii      -e 0.1
     - check-results -t version -p ophyd       -e 1.5
     - python -V
     - ipython -V
