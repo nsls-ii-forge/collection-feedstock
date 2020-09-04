@@ -3,7 +3,7 @@
 {% set cycle = "2" %}
 {% set version = "0" %}
 {% set micro = "" %}
-{% set build_num = "7" %}
+{% set build_num = "8" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,7 @@ requirements:
     - bluesky-darkframes
     - caproto
     - inflection
-    - nslsii >=0.0.17
+    - nslsii >=0.1.0
     - pexpect
     - pyepics >=3.4.2
     - pyolog >=4.4.0
@@ -42,6 +42,9 @@ requirements:
     # Need to fix it on their side.
     # - xpdacq
     # - xpdan
+    # Debugging tools:
+    - hunter
+    - logging_tree
 
 test:
   requires:
@@ -66,6 +69,7 @@ test:
     - pyxrf
     - skbeam
     - srwlpy  # [linux]    
+    - srwpy
     - suitcase.csv
     - suitcase.json_metadata
     - suitcase.jsonl
@@ -89,18 +93,18 @@ test:
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    - check-results -t channels -f conda-forge
+    - check-results -t channels -f conda-forge  # [not osx]
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
-    - check-results -t version -p databroker  -e 1.0
-    - check-results -t version -p event_model -e 1.15
+    - check-results -t version -p databroker  -e 1.2
+    - check-results -t version -p event_model -e 1.16
     - check-results -t version -p ophyd       -e 1.5
     - python -V
     - ipython -V
     - conda-pack --help
-    - nexpy --help
     - napari --help
     - napari --version
+    - nexpy --help
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
