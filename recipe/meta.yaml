@@ -46,6 +46,9 @@ requirements:
     # Debugging tools:
     - hunter
     - logging_tree
+    # Profiling tools:
+    - line_profiler
+    - pyinstrument
 
 test:
   requires:
