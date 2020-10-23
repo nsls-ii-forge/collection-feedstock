@@ -11,13 +11,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: {{ build_num }}
+  number: {{ build_num }}-1
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_{{ build_num }}-1
+    - nsls2-analysis ==2020C2.0=*_{{ build_num }}
     - python
     - ansiwrap
     - bloptools
