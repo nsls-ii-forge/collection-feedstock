@@ -2,10 +2,15 @@ channel_sources:
   - nsls2forge,defaults
 channel_targets:
   - nsls2forge main
-docker_image:
-  - nsls2/nsls2forge:latest
+cdt_name:
+  - cos6
 cuda_compiler_version:
   - None
+docker_image:
+  - nsls2/nsls2forge:latest
+numpy:
+  - 1.16
 python:
-  - 3.6
   - 3.7
+python_impl:
+  - cpython

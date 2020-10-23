@@ -11,7 +11,7 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: {{ build_num }}
+  number: {{ build_num }}-1
 
 requirements:
   host:
@@ -30,6 +30,7 @@ requirements:
     - pyolog >=4.4.0
     - pyserial
     - python-confluent-kafka  # [not win]
+    - redis-py
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
@@ -46,6 +47,9 @@ requirements:
     # Debugging tools:
     - hunter
     - logging_tree
+    # Profiling tools:
+    - line_profiler
+    - pyinstrument
 
 test:
   requires:
@@ -68,6 +72,7 @@ test:
     - photutils
     - pymongo
     - pyxrf
+    - redis
     - skbeam
     - srwlpy  # [linux]    
     - srwpy

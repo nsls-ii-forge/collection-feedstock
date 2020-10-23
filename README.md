@@ -5,7 +5,7 @@ Home: https://nsls-ii.github.io/deployment_docs.html
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/collection-feedstock/blob/master/LICENSE.txt)
 
 Summary: Collection metapackage for NSLS-II deployments
 
@@ -31,10 +31,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.7</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=72&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/collection-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7" alt="variant">
+                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/collection-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr>
