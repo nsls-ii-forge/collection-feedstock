@@ -3,7 +3,7 @@
 {% set cycle = "2" %}
 {% set version = "0" %}
 {% set micro = "" %}
-{% set build_num = "9" %}
+{% set build_num = "8" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_{{ build_num }}
+    - nsls2-analysis ==2020C2.0=*_{{ build_num }}-1
     - python
     - ansiwrap
     - bloptools
@@ -30,6 +30,7 @@ requirements:
     - pyolog >=4.4.0
     - pyserial
     - python-confluent-kafka  # [not win]
+    - redis-py
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
@@ -71,6 +72,7 @@ test:
     - photutils
     - pymongo
     - pyxrf
+    - redis
     - skbeam
     - srwlpy  # [linux]    
     - srwpy
