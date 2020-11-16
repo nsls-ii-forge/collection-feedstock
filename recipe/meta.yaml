@@ -28,6 +28,7 @@ requirements:
     - pyolog >=4.4.0
     - pyserial
     - python-confluent-kafka  # [not win]
+    - redis-py
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
