@@ -29,6 +29,7 @@ requirements:
     - pyserial
     - python-confluent-kafka  # [not win]
     - redis-py
+    - slack-sdk
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
