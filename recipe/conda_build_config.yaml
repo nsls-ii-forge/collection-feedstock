@@ -4,10 +4,6 @@ channel_targets:
   - nsls2forge main
 cdt_name:
   - cos6
-cuda_compiler_version:
-  - None
-docker_image:
-  - nsls2/nsls2forge:latest
 numpy:
   - 1.16
 python:
