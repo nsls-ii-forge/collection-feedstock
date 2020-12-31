@@ -11,7 +11,7 @@ jobs:
       linux_64_:
         CONFIG: linux_64_
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: nsls2/nsls2forge:latest
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
 
   steps:
