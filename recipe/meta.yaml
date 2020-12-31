@@ -3,7 +3,6 @@
 {% set cycle = "1" %}
 {% set version = "0" %}
 {% set micro = "" %}
-{% set build_num = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -11,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: {{ build_num }}
+  number: 1
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2021C1.0=*_{{ build_num }}
+    - nsls2-analysis ==2021C1.0=*_0
     - python
     - bloptools
     - bluesky-darkframes
@@ -29,6 +28,7 @@ requirements:
     - pyserial
     - python-confluent-kafka  # [not win]
     - redis-py
+    - slack-sdk
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
