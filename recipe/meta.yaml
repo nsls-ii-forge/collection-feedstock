@@ -1,9 +1,9 @@
 {% set name = "collection" %}
-{% set year = "2020" %}
-{% set cycle = "2" %}
+{% set year = "2021" %}
+{% set cycle = "1" %}
 {% set version = "0" %}
 {% set micro = "" %}
-{% set build_num = "9" %}
+{% set build_num = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -17,12 +17,12 @@ requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2020C2.0=*_{{ build_num }}
+    - nsls2-analysis ==2021C1.0=*_{{ build_num }}
     - python
     - bloptools
     - bluesky-darkframes
     - caproto
-    - nslsii >=0.1.0
+    - nslsii >=0.1.1
     - pexpect
     - pyepics >=3.4.2
     - pyolog >=4.4.0
@@ -97,13 +97,13 @@ test:
     - sixtools
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
-    - check-results -t channels -f conda-forge  # [not osx]
+    - check-results -t channels -f conda-forge
     # Fail if versions of the packages are not as expected minimum ones.
     - check-results -t version -p bluesky     -e 1.6
-    - check-results -t version -p databroker  -e 1.1
-    - check-results -t version -p event_model -e 1.16
-    - check-results -t version -p nslsii      -e 0.1
-    - check-results -t version -p ophyd       -e 1.5
+    - check-results -t version -p databroker  -e 1.2
+    - check-results -t version -p event_model -e 1.17
+    - check-results -t version -p nslsii      -e 0.1.1
+    - check-results -t version -p ophyd       -e 1.6
     - python -V
     - ipython -V
     - conda-pack --help
