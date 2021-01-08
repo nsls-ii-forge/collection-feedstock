@@ -29,6 +29,10 @@ requirements:
     - python-confluent-kafka  # [not win]
     - redis-py
     - slack-sdk
+    - globus-sdk
+    - appdirs
+    - pyzbar
+    - py4xs
     # Beamline-specific packages
     - chxtools
     - hklpy  # [linux]
