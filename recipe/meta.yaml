@@ -1,7 +1,7 @@
 {% set name = "collection" %}
 {% set year = "2021" %}
 {% set cycle = "1" %}
-{% set version = "0" %}
+{% set version = "2" %}
 {% set micro = "" %}
 
 package:
@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2021C1.0=*_0
+    - nsls2-analysis ==2021C1.2=*_0
     - python
     - bloptools
     - bluesky-darkframes
@@ -28,6 +28,7 @@ requirements:
     - pyserial
     - python-confluent-kafka  # [not win]
     - redis-py
+    - simple-pid
     - slack-sdk
     # Beamline-specific packages
     - chxtools
@@ -38,10 +39,7 @@ requirements:
     # qastools are installed from source
     # - qastools
     - sixtools
-    # XPD packages are in conflict with the rest of the stack.
-    # Need to fix it on their side.
-    # - xpdacq
-    # - xpdan
+    - xpdacq
     # Debugging tools:
     - hunter
     - logging_tree
