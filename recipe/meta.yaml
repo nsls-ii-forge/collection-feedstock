@@ -69,6 +69,7 @@ test:
     - pymongo
     - pyxrf
     - redis
+    - simple_pid
     - skbeam
     - srwlpy  # [linux]    
     - srwpy
@@ -91,8 +92,13 @@ test:
     - hkl  # [linux]
     - hxntools
     - isstools
+    - lixtools
+    - pdfstream
     - py4xs
     - sixtools
+    - xpdacq
+  files:
+    - test.xlsx
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
     - check-results -t channels -f conda-forge
@@ -108,6 +114,7 @@ test:
     - napari --help
     - napari --version
     - nexpy --help
+    - python -c "import pandas; print(pandas.read_excel('test.xlsx'))"
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
