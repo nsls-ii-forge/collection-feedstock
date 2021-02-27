@@ -1,7 +1,7 @@
 {% set name = "collection" %}
 {% set year = "2021" %}
 {% set cycle = "1" %}
-{% set version = "0" %}
+{% set version = "2" %}
 {% set micro = "" %}
 
 package:
@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2021C1.0=*_0
+    - nsls2-analysis ==2021C1.2=*_0
     - python
     - bloptools
     - bluesky-darkframes
@@ -28,6 +28,7 @@ requirements:
     - pyserial
     - python-confluent-kafka  # [not win]
     - redis-py
+    - simple-pid
     - slack-sdk
     # Beamline-specific packages
     - chxtools
@@ -38,10 +39,7 @@ requirements:
     # qastools are installed from source
     # - qastools
     - sixtools
-    # XPD packages are in conflict with the rest of the stack.
-    # Need to fix it on their side.
-    # - xpdacq
-    # - xpdan
+    - xpdacq
     # Debugging tools:
     - hunter
     - logging_tree
@@ -71,6 +69,7 @@ test:
     - pymongo
     - pyxrf
     - redis
+    - simple_pid
     - skbeam
     - srwlpy  # [linux]    
     - srwpy
@@ -93,8 +92,13 @@ test:
     - hkl  # [linux]
     - hxntools
     - isstools
+    - lixtools
+    - pdfstream
     - py4xs
     - sixtools
+    - xpdacq
+  files:
+    - test.xlsx
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
     - check-results -t channels -f conda-forge
@@ -110,6 +114,7 @@ test:
     - napari --help
     - napari --version
     - nexpy --help
+    - python -c "import pandas; print(pandas.read_excel('test.xlsx'))"
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
