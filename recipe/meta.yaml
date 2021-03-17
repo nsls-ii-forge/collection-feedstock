@@ -10,13 +10,13 @@ package:
 
 build:
   skip: True  # [py<37 or not linux]
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2021C1.2=*_0
+    - nsls2-analysis ==2021C1.2=*_1
     - python
     - bloptools
     - bluesky-darkframes
