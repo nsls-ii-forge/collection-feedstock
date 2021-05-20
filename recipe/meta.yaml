@@ -1,7 +1,7 @@
 {% set name = "collection" %}
 {% set year = "2021" %}
-{% set cycle = "1" %}
-{% set version = "2" %}
+{% set cycle = "2" %}
+{% set version = "0" %}
 {% set micro = "" %}
 
 package:
@@ -9,14 +9,14 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}{{ micro }}
 
 build:
-  skip: True  # [py<37 or not linux]
-  number: 1
+  skip: true  # [py<37 or not linux]
+  number: 0
 
 requirements:
   host:
     - python
   run:
-    - nsls2-analysis ==2021C1.2=*_1
+    - nsls2-analysis ==2021C2.0=*_1
     - python
     - bloptools
     - bluesky-darkframes
@@ -99,6 +99,7 @@ test:
     - xpdacq
   files:
     - test.xlsx
+    - test.xls
   commands:
     # Fail if the "conda-forge" channel is in the list of channels.
     - check-results -t channels -f conda-forge
@@ -114,7 +115,10 @@ test:
     - napari --help
     - napari --version
     - nexpy --help
+    # Test reading the newer format .xlsx with pandas/openpyxl:
     - python -c "import pandas; print(pandas.read_excel('test.xlsx'))"
+    # Test reading the old format .xls with pandas/xlrd:
+    - python -c "import pandas; print(pandas.read_excel('test.xls'))"
 
 about:
   home: https://nsls-ii.github.io/deployment_docs.html
